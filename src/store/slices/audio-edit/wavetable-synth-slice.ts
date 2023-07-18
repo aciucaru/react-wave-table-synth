@@ -36,7 +36,7 @@ const waveTableSynthSlice = createSlice(
                     audioService.getWaveTableSynth().noteOn(action.payload);
 
                     return {
-                        ... state,
+                        ...state,
                         currentNote: action.payload
                     };
                 }

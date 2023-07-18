@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useDispatch } from "react-redux";
 import
 {
@@ -14,7 +13,6 @@ import
 import { NumControl } from "../controls/NumControl";
 import { WaveformSelector, WaveformSide } from "../controls/WaveformSelector";
 
-import { Note } from "../../audio/basic-data/note";
 import { AUDIO_SETTINGS } from "../../audio/service/audio-settings";
 
 import { Logger, ILogObj } from "tslog";
@@ -34,11 +32,6 @@ const mainLogger: Logger<ILogObj> = new Logger({ name: "WaveShapeAndDetunePanel"
 export function WaveShapeAndDetunePanel(props: WaveShapeAndDetunePanelProps): JSX.Element
 {
     const dispatch = useDispatch();
-
-    const [startNoteDetune, setStartNoteDetune] = useState(new Note());
-    const [endNoteDetune, setEndNoteDetune] = useState(new Note());
-
-    // const [start]
 
     const onChangeStartOctaveDetune = (octave: number) =>
     {
@@ -69,7 +62,7 @@ export function WaveShapeAndDetunePanel(props: WaveShapeAndDetunePanelProps): JS
             // 1. modify the currently edited waveform in the store
             dispatch(setCurrentEditedWaveformIndex(props.editedWaveformIndex));
 
-            mainLogger.info(`onChangeStartNoteDetuneSemitone: semitone: ${startNoteDetune.getSemitone()}`);
+            // mainLogger.info(`onChangeStartNoteDetuneSemitone: semitone: ${startNoteDetune.getSemitone()}`);
 
             // 2. modify the 'start note detune' of that waveform in the store
             dispatch( setCurrentWaveformStartSemitoneDetune(semitone) );

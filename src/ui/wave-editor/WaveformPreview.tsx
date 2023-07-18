@@ -185,11 +185,6 @@ export function WaveformPreview(props: WaveformPreviewProps): JSX.Element
     {
         context2D.strokeStyle = `hsl(200, 50%, 30%)`;
 
-        let currentAmplitude: number = mainWaveform.discreteAmplitudesArray[0];
-        let x: number = 0;
-        let y: number = HEIGHT / 2.0 + HEIGHT * currentAmplitude / 2.0;
-
-        // draw negative envelope
         // very important: start the path with beginPath(), otherwise we get overlappings
         context2D.beginPath();
             context2D.moveTo(0, HEIGHT / 2.0);

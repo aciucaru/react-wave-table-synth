@@ -1,4 +1,4 @@
-import { SingleWaveform, SingleWaveformData } from "../wavetable/single-waveform";
+import { SingleWaveform } from "../wavetable/single-waveform";
 import { SingleShapeOscillator } from "./single-shape-oscillator";
 
 import { Note } from "../basic-data/note";

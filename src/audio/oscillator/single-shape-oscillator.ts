@@ -86,11 +86,6 @@ export class SingleShapeOscillator
         else
             subLogger.warn(WarnLogMsg.ILLEGAL_ARG + `: endSemitoneDetune: ${endSemitoneDetune}`);
 
-        // if(speedFactor > 0)
-        //     this.speedFactor = speedFactor;
-        // else
-        //     subLogger.warn(WarnLogMsg.ILLEGAL_ARG + `: speedFactor: ${speedFactor}`);
-
         this.setFrequencies();
     }
 
@@ -117,8 +112,6 @@ export class SingleShapeOscillator
 
     private calcAmplitude(sampleIndex: number, sampleCount: number): number
     {
-        // const subLogger = SingleShapeOscillator.mainLogger.getSubLogger({ name: "calcAmplitude" });
-
         let amplitude: number = 1.0;
         let currentX: number = 0.0;
 
@@ -144,8 +137,6 @@ export class SingleShapeOscillator
             const lineSlope = deltaAmplitude / deltaStep;
             amplitude = lineSlope * (waveformStep - lowerIntegerStep) + lowerAmplitude;
         }
-
-        // subLogger.debug(`amplitude: ${amplitude}`);
 
         return amplitude;
     };
@@ -284,21 +275,6 @@ export class SingleShapeOscillator
         else
             subLogger.warn(WarnLogMsg.ILLEGAL_ARG + ": semitoneDetune");
     }
-
-    // public setSpeedFactor(speedFactor: number): void
-    // {
-    //     const subLogger = SingleShapeOscillator.mainLogger.getSubLogger({ name: "setSpeedFactor" });
-    //     subLogger.info(InfoLogMsg.FUNCTION_START);
-
-    //     if(AUDIO_SETTINGS.minSpeedFactor <= speedFactor
-    //         && speedFactor <= AUDIO_SETTINGS.maxSpeedFactor)
-    //     {
-    //         this.speedFactor = speedFactor;
-    //         this.calculateAudioParams(); // recalculate all audio parameters
-    //     }
-    //     else
-    //         subLogger.warn(WarnLogMsg.ILLEGAL_ARG + ": speedFactor");
-    // }
 
     public setNote(note: Note): void
     {

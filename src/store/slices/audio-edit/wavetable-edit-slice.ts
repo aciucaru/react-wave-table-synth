@@ -46,7 +46,7 @@ const waveTableEditSlice = createSlice(
 
                 if(0 <= action.payload && action.payload < state.mainWaveformsArray.length)
                     return {
-                                ... state,
+                                ...state,
                                 currentEditedWaveformIndex: action.payload
                             };
                 else

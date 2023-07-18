@@ -191,6 +191,7 @@ export class SingleShapeGraphicOscillator
     public reset(): void
     {
         const subLogger = SingleShapeGraphicOscillator.mainLogger.getSubLogger({ name: "reset" });
+        subLogger.info(InfoLogMsg.FUNCTION_START)
 
         this.currentIncrement = 0;
         this.currentXValRadians = 0;

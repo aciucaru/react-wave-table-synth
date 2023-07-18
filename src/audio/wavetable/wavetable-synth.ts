@@ -13,9 +13,6 @@ export interface WaveTableSynthData
     waveTable: WaveTableData;
 }
 
-const TONE_OFF_GAIN: number = 0.01;
-const TONE_ON_GAIN: number = 0.8;
-
 export class WaveTableSynth
 {
     private waveTable: WaveTable;
@@ -37,7 +34,6 @@ export class WaveTableSynth
     // constants:
     private readonly SINGLE_WAVEFORM_MAX_SAMPLE_COUNT: number;
     private readonly ALL_WAVEFORMS_MAX_SAMPLE_COUNT: number;
-    private readonly DELTA_X: number;
 
     private static mainLogger: Logger<ILogObj> = new Logger({ name: WaveTableSynth.name });
 
@@ -57,7 +53,6 @@ export class WaveTableSynth
         
         this.SINGLE_WAVEFORM_MAX_SAMPLE_COUNT = this.audioContext.sampleRate * AUDIO_SETTINGS.singleWaveformDuration;
         this.ALL_WAVEFORMS_MAX_SAMPLE_COUNT = this.audioContext.sampleRate * AUDIO_SETTINGS.singleWaveformDuration * AUDIO_SETTINGS.defaultWaveformCount;
-        this.DELTA_X = 1.0 / this.singleWaveformSampleCount;
 
         this.waveTable = new WaveTable("audio prog wavetable");
 
@@ -103,7 +98,6 @@ export class WaveTableSynth
         const subLogger = WaveTableSynth.mainLogger.getSubLogger({ name: "calcAndFillAmpBuffers" });
         subLogger.info(InfoLogMsg.FUNCTION_START);
 
-        // const loggMsg1 = `currentNote: ${this.currentNote.getSemitone()} speedFactor: ${this.speedFactor}`;
         const loggMsg1 = `currentNote: ${this.currentNote.getSemitone()}`;
         subLogger.debug(loggMsg1);
 
@@ -126,8 +120,6 @@ export class WaveTableSynth
             this.calcAndFillAmpBuffers();
 
             const TOTAL_WAVEFORMS_COUNT: number = this.waveTable.getTotalWaveformsCount();
-            // const SINGLE_WAVEFORM_DURATION = AUDIO_SETTINGS.singleWaveformDuration / this.speedFactor;
-            // const SINGLE_WAVEFORM_DURATION = AUDIO_SETTINGS.singleWaveformDuration;
     
             let bufferSourceNode: AudioBufferSourceNode;
             let currentChannelBuffer: Float32Array;
@@ -136,7 +128,6 @@ export class WaveTableSynth
             bufferSourceNode.buffer = this.allWaveformsAudioBuffer;
             bufferSourceNode.connect(this.audioContext.destination);
     
-            const DELTA_X_NORM = 1.0 / this.ALL_WAVEFORMS_MAX_SAMPLE_COUNT;
             let xValNormalized: number = 0.0;
             let yStartValNormalized: number = 0.0;
             let yEndValNormalized: number = 0.0;
@@ -147,11 +138,6 @@ export class WaveTableSynth
                 // the same buffer is reused for every wavform of the wavetable
                 for(let i=0; i<this.singleWaveformSampleCount; i++)
                 {
-                    // xValNormalized = i * DELTA_X_NORM;
-                    // yStartValNormalized = this.startAmplitudeBuffer[i]
-                    // yEndValNormalized = this.endAmplitudeBuffer[i];
-    
-                    // yFinalValNormalized = (yEndValNormalized - yStartValNormalized) * waveformIndex/(TOTAL_WAVEFORMS_COUNT - 1) + yStartValNormalized;
                     xValNormalized = waveformIndex/TOTAL_WAVEFORMS_COUNT;
                     yStartValNormalized = this.startAmplitudeBuffer[i];
                     yEndValNormalized = this.endAmplitudeBuffer[i];
@@ -170,41 +156,6 @@ export class WaveTableSynth
         }
         else
             subLogger.warn(WarnLogMsg.NULL_ARG + ": note");
-    }
-
-    private testAudio(): void
-    {
-        const freq1 = 440.00;
-
-        const oscillator1: OscillatorNode = this.audioContext.createOscillator();
-        const gainNode1: GainNode =this.audioContext.createGain();
-
-        const startTime = this.audioContext.currentTime;
-        oscillator1.frequency.setValueAtTime(freq1, startTime);
-
-        gainNode1.gain.setValueAtTime(TONE_OFF_GAIN, startTime);
-        gainNode1.gain.exponentialRampToValueAtTime(TONE_ON_GAIN, startTime + 0.1);
-        gainNode1.gain.setValueAtTime(TONE_ON_GAIN, startTime + 1.0);
-
-        // lower volume to stop hearing the sound
-        gainNode1.gain.exponentialRampToValueAtTime(TONE_OFF_GAIN, startTime + 1.1);
-        gainNode1.gain.setValueAtTime(0, startTime + 1.2);
-
-
-        oscillator1.frequency.value = 440;
-        oscillator1.connect(gainNode1);
-        gainNode1.connect(this.audioContext.destination);
-
-        const currentTime = this.audioContext.currentTime;
-        gainNode1.gain.setValueAtTime(TONE_OFF_GAIN, currentTime);
-
-        oscillator1.start();
-    }
-
-	public noteOff(): void
-    {
-        const subLogger = WaveTableSynth.mainLogger.getSubLogger({ name: "noteOff" });
-		subLogger.info(InfoLogMsg.FUNCTION_START);
     }
 
     public getWaveTable(): WaveTable { return this.waveTable; }

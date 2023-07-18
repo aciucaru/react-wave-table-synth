@@ -1,6 +1,3 @@
-
-
-import { NoteData } from "../../audio/basic-data/note";
 import { notes } from "../../audio/service/audio-notes";
 import { DummyKey } from "./DummyKey";
 import { KeyButton, KeyType } from "./KeyButton";
