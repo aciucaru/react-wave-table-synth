@@ -1,8 +1,8 @@
 # Simple wavetable synthesizer made with Web Audio API and React
 Dependencies:
-- [Typescript](https://www.typescriptlang.org/)
-- [React](https://react.dev/)
-- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [Typescript](https://www.typescriptlang.org/) - main language
+- [React](https://react.dev/) - UI library
+- [Redux Toolkit](https://redux-toolkit.js.org/) - store library
 - [tslog](https://www.npmjs.com/package/tslog) - logging library for TypeScript and JavaScript
 - [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) - browser built-in audio system
 
