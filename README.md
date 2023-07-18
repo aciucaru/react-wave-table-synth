@@ -22,4 +22,4 @@ Just like for the wavetable itself, everything is interpolated: the frequency, t
 
 **Notice!**
 The application was made as best as possible, with log messages almost everywhere, except the sound generating functions. The logging library used seems to not allow global logging settings, so the loggs where left turned on.
-If you see performance issues while drawing the amplitude bars, then please **close the browser console**, so the logs won't show up. 
+If you see performance issues while drawing the amplitude bars (in the Amplitude editor), then please **close the browser console**, so the logs won't show up. 
