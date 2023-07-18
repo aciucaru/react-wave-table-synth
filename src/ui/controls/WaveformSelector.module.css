@@ -1,0 +1,120 @@
+.mainContainer
+{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 5px;
+
+    padding: 0px;
+    margin: 0px;
+}
+
+.optionsContainer
+{
+    padding: 0px;
+    margin: 0px;
+    border-radius: 3px;
+    background-image: linear-gradient(160deg, rgb(26, 26, 26),rgb(10, 10, 10));
+    box-shadow: -1px -1px 4px 0px rgba(0, 0, 0, 0.7),
+                1px 1px 4px 0px rgba(255, 255, 255, 0.5);
+}
+
+.horizontalLayout
+{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 0px;
+    margin: 0px;
+
+    border-radius: 3px;
+
+    background-image: linear-gradient(160deg, rgb(26, 26, 26),rgb(10, 10, 10));
+    box-shadow: -1px -1px 4px 0px rgba(0, 0, 0, 0.7),
+                1px 1px 4px 0px rgba(255, 255, 255, 0.5);
+}
+
+.verticalLayout
+{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    padding: 0px;
+    margin: 0px;
+
+    border-radius: 3px;
+    background-image: linear-gradient(160deg, rgb(26, 26, 26),rgb(10, 10, 10));
+    box-shadow: -1px -1px 4px 0px rgba(0, 0, 0, 0.7),
+                1px 1px 4px 0px rgba(255, 255, 255, 0.5);
+}
+
+.label
+{
+    padding: 0px;
+    margin: 0px;
+
+    color: hsl(0, 0%, 75%);
+    font-size: 16px;
+}
+
+.bgImage
+{
+    height: 16px;
+    width: 40px;
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover;
+    z-index: 100;
+}
+
+.sineImage
+{
+    background-image: url("waveform-sine.png");
+    filter: brightness(0.8) drop-shadow(1px 1px 2px hsl(240, 69%, 50%));
+}
+
+.sineImageSelected
+{
+    background-image: url("waveform-sine.png");
+    filter: brightness(1.6) drop-shadow(1px 1px 2px hsl(240, 69%, 70%));
+}
+
+.triangleImage
+{
+    background-image: url("waveform-triang.png");
+    filter: brightness(0.8) drop-shadow(1px 1px 2px hsl(118, 54%, 50%));
+}
+
+.triangleImageSelected
+{
+    background-image: url("waveform-triang.png");
+    filter: brightness(1.6) drop-shadow(1px 1px 2px hsl(118, 54%, 70%));
+}
+
+.squareImage
+{
+    background-image: url("waveform-square.png");
+    filter: brightness(0.8) drop-shadow(1px 1px 2px hsl(278, 54%, 50%));
+}
+
+.squareImageSelected
+{
+    background-image: url("waveform-square.png");
+    filter: brightness(1.6) drop-shadow(1px 1px 2px hsl(278, 54%, 70%));
+}
+
+.sawImage
+{
+    background-image: url("waveform-saw.png");
+    filter: brightness(0.8) drop-shadow(1px 1px 2px hsl(41, 69%, 50%));
+}
+
+.sawImageSelected
+{
+    background-image: url("waveform-saw.png");
+    filter: brightness(1.6) drop-shadow(1px 1px 2px hsl(41, 69%, 70%));
+}

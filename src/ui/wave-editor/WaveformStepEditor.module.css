@@ -1,0 +1,26 @@
+.mainContainer
+{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* fara efect la no-wrap */
+    /* align-content: center; */
+
+    padding: 0px;
+    margin: 0px;
+}
+
+.stepsContainer
+{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* fara efect la no-wrap */
+    /* align-content: center; */
+    gap: 0px;
+
+    padding: 10px;
+    margin: 0px;
+}

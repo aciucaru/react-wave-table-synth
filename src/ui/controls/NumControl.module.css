@@ -1,0 +1,63 @@
+*, *:before, *:after
+{
+    box-sizing: border-box;
+}
+
+.mainContainer
+{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-content: flex-start;
+    gap: 5px;
+
+    margin: 0px;
+}
+
+.innerContainer
+{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+
+    padding-top: 8px;
+    padding-bottom: 4px;
+    padding-left: 7px;
+    padding-right: 7px;
+    margin: 0px;
+}
+
+.canvas
+{
+    padding: 0px;
+    margin: 0px;
+}
+
+.value
+{
+    width: 30px;
+
+    margin: 0px;
+
+    user-select: none;
+    text-align: right;
+    font-size: 16px;
+    /* font-family: monospace; */
+    color: hsl(0, 0%, 90%);
+
+    /* border: 1px solid rgb(58, 58, 58); */
+}
+
+.label
+{
+    padding: 0px;
+    margin: 0px;
+
+    color: hsl(0, 0%, 75%);
+    font-size: 16px;
+}
+
+

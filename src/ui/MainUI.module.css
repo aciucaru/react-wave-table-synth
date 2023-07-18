@@ -1,0 +1,128 @@
+*, *:before, *:after
+{
+    box-sizing: border-box;
+}
+
+:root
+{
+    --waveform-params-bg-color: hsla(0, 0%, 100%, 0.1);
+}
+
+.mainContainer
+{
+    height: 100vh;
+    flex-grow: 100;
+
+    display: grid;
+    grid-template-columns: 240px 240px 205px 100px 205px 240px 240px;
+    grid-template-rows: 150px 150px 190px 170px 200px;
+
+    justify-items: stretch;
+    align-items: stretch;
+    justify-content: center;
+    align-content: start;
+    gap: 0px;
+        
+    padding: 10px;
+    margin: 0px;
+    background-image: linear-gradient(-20deg, hsl(0, 0%, 21%) 30%, hsl(226, 11%, 47%) );
+
+    border: solid 1px rgba(255, 255, 255, 0.2);
+}
+
+.startWaveformPreview
+{
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+
+    padding: 10px;
+    margin: 0px;
+
+    background-color: var(--waveform-params-bg-color);
+    border-radius: 10px 10px 0px 0px;
+}
+
+.startWaveformEditor
+{
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+
+    padding: 10px;
+    margin: 0px;
+
+    background-color: var(--waveform-params-bg-color);
+    border-radius: 0px 0px 10px 0px;
+}
+
+.startWaveformShapeAndDetune
+{
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+
+    padding: 10px;
+    margin: 0px;
+
+    background-color: var(--waveform-params-bg-color);
+    border-radius: 0px 0px 10px 10px;
+}
+
+.endWaveformPreview
+{
+    grid-column: 5 / 8;
+    grid-row: 1 / 2;
+
+    padding: 10px;
+    margin: 0px;
+
+    background-color: var(--waveform-params-bg-color);
+    border-radius: 10px 10px 0px 0px;
+}
+
+.endWaveformEditor
+{
+    grid-column: 5 / 8;
+    grid-row: 2 / 3;
+
+    padding: 10px;
+    margin: 0px;
+
+    background-color: var(--waveform-params-bg-color);
+    border-radius: 0px 0px 0px 10px;
+}
+
+.endWaveformShapeAndDetune
+{
+    grid-column: 6 / 8;
+    grid-row: 3 / 4;
+
+    padding: 10px;
+    margin: 0px;
+
+    background-color: var(--waveform-params-bg-color);
+    border-radius: 0px 0px 10px 10px;
+}
+
+.waveTablePreview
+{
+    grid-column: 3 / 6;
+    grid-row: 3 / 5;
+
+    padding: 20px;
+    margin: 0px;
+}
+
+.keyPad
+{
+    grid-column: 2 / 7;
+    grid-row: 5 / 6;
+    justify-self: center;
+}
+
+.label
+{
+    padding: 0px;
+    margin: 0px;
+
+    color: hsl(0, 0%, 75%);
+    font-size: 16px;
+}

@@ -1,0 +1,31 @@
+.background
+{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    width: min-content;
+    height: min-content;
+        
+    padding: 0px;
+    margin: 2px;
+
+    border-radius: 0px;
+    background-origin: border-box;
+
+    user-select: none;
+    color: hsl(200, 70%, 60%);
+}
+
+.background:hover
+{
+    background-color:  hsl(200, 70%, 60%);
+    color:hsl(0, 0%, 10%);
+}
+
+.background:active
+{
+    background-color:  hsl(200, 70%, 90%);
+    color:hsl(200, 50%, 40%);
+}
