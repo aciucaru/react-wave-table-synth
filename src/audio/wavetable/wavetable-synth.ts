@@ -123,10 +123,15 @@ export class WaveTableSynth
     
             let bufferSourceNode: AudioBufferSourceNode;
             let currentChannelBuffer: Float32Array;
+            let gainNode: GainNode;
             
             bufferSourceNode = this.audioContext.createBufferSource();
             bufferSourceNode.buffer = this.allWaveformsAudioBuffer;
-            bufferSourceNode.connect(this.audioContext.destination);
+
+            gainNode = this.audioContext.createGain();
+
+            bufferSourceNode.connect(gainNode);
+            gainNode.connect(this.audioContext.destination);
     
             let xVal: number = 0.0;
             let yStartVal: number = 0.0;
@@ -151,6 +156,11 @@ export class WaveTableSynth
                     }
                 }
             }
+
+            // set gain (volume) to 80%
+            gainNode.gain.setValueAtTime(0.8, this.audioContext.currentTime);
+
+            // start audiobuffer node, this actually plays the synthesized sound
             const ALL_WAVEFORMS_DURATION = AUDIO_SETTINGS.singleWaveformDuration * TOTAL_WAVEFORMS_COUNT;
             bufferSourceNode.start(this.audioContext.currentTime, 0, ALL_WAVEFORMS_DURATION);
         }
