@@ -10,7 +10,10 @@ Dependencies:
 ![screenshot](screenshots/main-app.jpg)
 
 # How it works
-This synthesizer allows creating a wavetable by specifying 2 waveforms: the **start** and **end waveforms**.
-Then, all the other waveforms ar created by interpolating between those 2 waveforms. The wavetable has 8 waveforms in total.
+This synthesizer allows creating a wavetable by specifying 2 waveforms: the **start** and **end** waveforms. Then, all the other waveforms ar created by interpolating between those 2 waveforms. The wavetable has 8 waveforms in total.
 Everything is interpolated: the frequency, the amplitude and the shape.
 ![screenshot](screenshots/main-waveforms.jpg)
+
+# Modifying a waveform
+For each of the 2 main waveforms, you can change the ends (the sides) of the waveform: the **beggging** and the **end**. Just like for the wavetable, the synthesizer interpolates the parameters from the **beggining** to the **end** of the waveform.
+Just like for the wavetable itself, everything is interpolated: the frequency, the amplitude and the shape.
