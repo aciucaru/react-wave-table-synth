@@ -17,3 +17,4 @@ Everything is interpolated: the frequency, the amplitude and the shape.
 # Modifying a waveform
 For each of the 2 main waveforms, you can change the ends (the sides) of the waveform: the **beggging** and the **end**. Just like for the wavetable, the synthesizer interpolates the parameters from the **beggining** to the **end** of the waveform.
 Just like for the wavetable itself, everything is interpolated: the frequency, the amplitude and the shape.
+![screenshot](screenshots/waveform-ends.jpg)
