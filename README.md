@@ -20,7 +20,7 @@ For each of the 2 main waveforms, you can change the ends (the sides) of the wav
 Just like for the wavetable itself, everything is interpolated: the frequency, the amplitude and the shape.
 ![screenshot](screenshots/waveform-ends.jpg)
 
-**PS** please use mouse scroll only to modify the numeric parameters
+**PS:** please use mouse scroll only to modify the numeric parameters
 ![screenshot](screenshots/mouse-scroll.jpg)
 
 **Notice!**
