@@ -2,6 +2,7 @@
 Dependencies:
 - [Typescript](https://www.typescriptlang.org/)
 - [React](https://react.dev/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
 - [tslog](https://www.npmjs.com/package/tslog) - logging library for TypeScript and JavaScript
 - [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) - browser built-in audio system
 
