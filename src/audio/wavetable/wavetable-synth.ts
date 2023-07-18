@@ -74,21 +74,13 @@ export class WaveTableSynth
 
         const firstMainWave = this.waveTable.getFirstMainWave();
         if(firstMainWave != null)
-            this.startOscillator = new MultiShapeOscillator(
-                                                                firstMainWave,
-                                                                this.currentNote,
-                                                                1
-                                                            );
+            this.startOscillator = new MultiShapeOscillator(firstMainWave, this.currentNote, 1);
         else
             subLogger.warn(WarnLogMsg.NULL_INTERNAL_STATE + ": firstMainWave");
         
         const lastMainWave = this.waveTable.getLastMainWave();
         if(lastMainWave != null)
-            this.endOscillator = new MultiShapeOscillator(
-                                                            lastMainWave,
-                                                            this.currentNote,
-                                                            1
-                                                        );
+            this.endOscillator = new MultiShapeOscillator(lastMainWave, this.currentNote, 1);
         else
             subLogger.warn(WarnLogMsg.NULL_INTERNAL_STATE + ": lastMainWave");
     }
@@ -157,7 +149,7 @@ export class WaveTableSynth
                 }
             }
 
-            // set gain (volume) to 80%
+            // set gain (volume) to 70%
             gainNode.gain.setValueAtTime(0.7, this.audioContext.currentTime);
 
             // start audiobuffer node, this actually plays the synthesized sound
