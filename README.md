@@ -1,9 +1,9 @@
 # Simple wavetable synthesizer made with Web Audio API and React
 Dependencies:
-[Typescript][https://www.typescriptlang.org/]
-[React][https://react.dev/]
-[TSlog][https://www.npmjs.com/package/tslog] - logging library for TypeScript and JavaScript
-[Web Audio API][https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API] - browser built-in audio system
+- [Typescript](https://www.typescriptlang.org/)
+- [React](https://react.dev/)
+- [TSlog](https://www.npmjs.com/package/tslog) - logging library for TypeScript and JavaScript
+- [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) - browser built-in audio system
 
 [Project hosted on Netlify][https://react-wave-table-synth.netlify.app/]
 
