@@ -128,26 +128,26 @@ export class WaveTableSynth
             bufferSourceNode.buffer = this.allWaveformsAudioBuffer;
             bufferSourceNode.connect(this.audioContext.destination);
     
-            let xValNormalized: number = 0.0;
-            let yStartValNormalized: number = 0.0;
-            let yEndValNormalized: number = 0.0;
-            let yFinalValNormalized: number = 0.0;
+            let xVal: number = 0.0;
+            let yStartVal: number = 0.0;
+            let yEndVal: number = 0.0;
+            let yFinalVal: number = 0.0;
             for(let waveformIndex=0; waveformIndex<TOTAL_WAVEFORMS_COUNT; waveformIndex++)
             {
                 // calculate and fill the buffer with the amplitudes of the current waveform
                 // the same buffer is reused for every wavform of the wavetable
                 for(let i=0; i<this.singleWaveformSampleCount; i++)
                 {
-                    xValNormalized = waveformIndex/TOTAL_WAVEFORMS_COUNT;
-                    yStartValNormalized = this.startAmplitudeBuffer[i];
-                    yEndValNormalized = this.endAmplitudeBuffer[i];
-                    yFinalValNormalized = yStartValNormalized * (1.0 - xValNormalized) + yEndValNormalized * xValNormalized;
+                    xVal = waveformIndex/TOTAL_WAVEFORMS_COUNT;
+                    yStartVal = this.startAmplitudeBuffer[i];
+                    yEndVal = this.endAmplitudeBuffer[i];
+                    yFinalVal = yStartVal * (1.0 - xVal) + yEndVal * xVal;
 
                     for(let channel=0; channel<AUDIO_SETTINGS.numOfChannels; channel++)
                     {
                         // set the actual amplitudes for all intermediate waveforms (including start and end waveforms)
                         currentChannelBuffer = this.allWaveformsAudioBuffer.getChannelData(channel);
-                        currentChannelBuffer[waveformIndex * TOTAL_WAVEFORMS_COUNT + i] = yFinalValNormalized;
+                        currentChannelBuffer[waveformIndex * TOTAL_WAVEFORMS_COUNT + i] = yFinalVal;
                     }
                 }
             }
