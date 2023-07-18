@@ -18,3 +18,7 @@ Everything is interpolated: the frequency, the amplitude and the shape.
 For each of the 2 main waveforms, you can change the ends (the sides) of the waveform: the **beggging** and the **end**. Just like for the wavetable, the synthesizer interpolates the parameters from the **beggining** to the **end** of the waveform.
 Just like for the wavetable itself, everything is interpolated: the frequency, the amplitude and the shape.
 ![screenshot](screenshots/waveform-ends.jpg)
+
+**Notice!**
+The application was made as best as possible, with log messages almost everywhere, except the sound generating functions. The logging library used seems to not allow global logging settings, so the loggs where left turned on.
+If you see performance issues while drawing the amplitude bars, then please **close the browser console**, so the logs won't show up. 
