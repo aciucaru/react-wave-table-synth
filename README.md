@@ -20,6 +20,9 @@ For each of the 2 main waveforms, you can change the ends (the sides) of the wav
 Just like for the wavetable itself, everything is interpolated: the frequency, the amplitude and the shape.
 ![screenshot](screenshots/waveform-ends.jpg)
 
+**PS** please use mouse scroll only to modify the numeric parameters
+![screenshot](screenshots/mouse-scroll.jpg)
+
 **Notice!**
 The application was made as best as possible, with log messages almost everywhere, except the sound generating functions. The logging library used seems to not allow global logging settings, so the loggs where left turned on.
 If you see performance issues while drawing the amplitude bars (in the Amplitude editor), then please **close the browser console**, so the logs won't show up. 
