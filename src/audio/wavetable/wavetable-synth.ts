@@ -158,7 +158,7 @@ export class WaveTableSynth
             }
 
             // set gain (volume) to 80%
-            gainNode.gain.setValueAtTime(0.8, this.audioContext.currentTime);
+            gainNode.gain.setValueAtTime(0.2, this.audioContext.currentTime);
 
             // start audiobuffer node, this actually plays the synthesized sound
             const ALL_WAVEFORMS_DURATION = AUDIO_SETTINGS.singleWaveformDuration * TOTAL_WAVEFORMS_COUNT;
