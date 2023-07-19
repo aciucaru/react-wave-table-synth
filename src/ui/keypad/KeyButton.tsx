@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { noteOn } from "../../store/slices/audio-edit/wavetable-synth-slice";
+import { noteOn } from "../../store/slices/wavetable-synth-slice";
 
 import { NoteData } from "../../audio/basic-data/note";
 

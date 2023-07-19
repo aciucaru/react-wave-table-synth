@@ -1,12 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-import { AudioService } from "../../../audio/service/audio-service";
-import { SingleWaveform, SingleWaveformData } from "../../../audio/wavetable/single-waveform";
-import { WaveformShape } from "../../../audio/basic-data/waveform-shape";
+import { AudioService } from "../../audio/service/audio-service";
+import { SingleWaveform, SingleWaveformData } from "../../audio/wavetable/single-waveform";
+import { WaveformShape } from "../../audio/basic-data/waveform-shape";
 
 import { ILogObj, Logger } from "tslog";
-import { InfoLogMsg } from "../../../log/info-log-messages";
-import { WarnLogMsg } from "../../../log/warn-log-messages";
+import { InfoLogMsg } from "../../log/info-log-messages";
+import { WarnLogMsg } from "../../log/warn-log-messages";
 
 export interface WaveTableEditState
 {

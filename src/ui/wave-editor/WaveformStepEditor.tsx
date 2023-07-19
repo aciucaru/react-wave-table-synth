@@ -7,7 +7,7 @@ import
 {
     setCurrentEditedWaveformIndex,
     setCurrentWaveformAmplitudesArray
-} from "../../store/slices/audio-edit/wavetable-edit-slice";
+} from "../../store/slices/wavetable-edit-slice";
 
 import { Logger, ILogObj } from "tslog";
 

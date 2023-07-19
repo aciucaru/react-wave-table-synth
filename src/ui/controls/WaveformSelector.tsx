@@ -6,7 +6,7 @@ import
 
     setCurrentWaveformStartShape,
     setCurrentWaveformEndShape,
-} from "../../store/slices/audio-edit/wavetable-edit-slice";
+} from "../../store/slices/wavetable-edit-slice";
 
 import { ToggleButtonFrame } from "../decorations/ToggleButtonFrame";
 import { WaveformShape } from "../../audio/basic-data/waveform-shape";

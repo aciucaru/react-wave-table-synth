@@ -8,7 +8,7 @@ import
 
     setCurrentWaveformEndOctaveDetune,
     setCurrentWaveformEndSemitoneDetune,
-} from "../../store/slices/audio-edit/wavetable-edit-slice";
+} from "../../store/slices/wavetable-edit-slice";
 
 import { NumControl } from "../controls/NumControl";
 import { WaveformSelector, WaveformSide } from "../controls/WaveformSelector";

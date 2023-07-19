@@ -1,7 +1,7 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 
-import { waveTableEditReducers } from "./slices/audio-edit/wavetable-edit-slice";
-import { waveTableSynthReducers } from "./slices/audio-edit/wavetable-synth-slice";
+import { waveTableEditReducers } from "./slices/wavetable-edit-slice";
+import { waveTableSynthReducers } from "./slices/wavetable-synth-slice";
 
 export const store = configureStore(
     {

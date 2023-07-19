@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-import { Note, NoteData } from "../../../audio/basic-data/note";
-import { AudioService } from "../../../audio/service/audio-service";
+import { Note, NoteData } from "../../audio/basic-data/note";
+import { AudioService } from "../../audio/service/audio-service";
 
 import { ILogObj, Logger } from "tslog";
-import { InfoLogMsg } from "../../../log/info-log-messages";
-import { WarnLogMsg } from "../../../log/warn-log-messages";
+import { InfoLogMsg } from "../../log/info-log-messages";
+import { WarnLogMsg } from "../../log/warn-log-messages";
 
 export interface WaveTableSynthState
 {
