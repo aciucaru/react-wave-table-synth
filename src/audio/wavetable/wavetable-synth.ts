@@ -129,21 +129,24 @@ export class WaveTableSynth
             let yStartVal: number = 0.0;
             let yEndVal: number = 0.0;
             let yFinalVal: number = 0.0;
+
+            // iterate trough all the waveforms (including 'start' and 'end' waveforms)
             for(let waveformIndex=0; waveformIndex<TOTAL_WAVEFORMS_COUNT; waveformIndex++)
             {
-                // calculate and fill the buffer with the amplitudes of the current waveform
-                // the same buffer is reused for every wavform of the wavetable
-                for(let i=0; i<this.singleWaveformSampleCount; i++)
+                for(let channel=0; channel<AUDIO_SETTINGS.numOfChannels; channel++)
                 {
-                    xVal = waveformIndex/TOTAL_WAVEFORMS_COUNT;
-                    yStartVal = this.startAmplitudeBuffer[i];
-                    yEndVal = this.endAmplitudeBuffer[i];
-                    yFinalVal = yStartVal * (1.0 - xVal) + yEndVal * xVal;
+                    currentChannelBuffer = this.allWaveformsAudioBuffer.getChannelData(channel);
 
-                    for(let channel=0; channel<AUDIO_SETTINGS.numOfChannels; channel++)
+                    // calculate and fill the buffer with the amplitudes of the current waveform
+                    // the same buffer is reused for every wavform of the wavetable
+                    for(let i=0; i<this.singleWaveformSampleCount; i++)
                     {
-                        // set the actual amplitudes for all intermediate waveforms (including start and end waveforms)
-                        currentChannelBuffer = this.allWaveformsAudioBuffer.getChannelData(channel);
+                        xVal = waveformIndex/TOTAL_WAVEFORMS_COUNT;
+                        yStartVal = this.startAmplitudeBuffer[i];
+                        yEndVal = this.endAmplitudeBuffer[i];
+                        yFinalVal = yStartVal * (1.0 - xVal) + yEndVal * xVal;
+
+                        // set the actual amplitudes for waveform of index 'waveformIndex'
                         currentChannelBuffer[waveformIndex * TOTAL_WAVEFORMS_COUNT + i] = yFinalVal;
                     }
                 }
