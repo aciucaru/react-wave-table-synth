@@ -5,6 +5,7 @@ import { WaveTablePreview } from "./wave-editor/WaveTablePreview";
 import { KeyPad } from "./keypad/KeyPad";
 
 import styles from "./MainUI.module.css"
+import { PersonalProfilePanel } from "./personal-profile/PersonalProfilePanel";
 
 export function MainUI(): JSX.Element
 {
@@ -48,6 +49,10 @@ export function MainUI(): JSX.Element
 
             <div className={styles.keyPad}>
                 <KeyPad></KeyPad>
+            </div>
+
+            <div className={styles.personalProfilePanel}>
+                <PersonalProfilePanel></PersonalProfilePanel>
             </div>
         </div>
     );

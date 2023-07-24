@@ -7,29 +7,37 @@
     align-items: flex-start;
     justify-content: flex-start;
     align-content: flex-start;
-    gap: 0px;
+    gap: 10px;
 
-    padding: 0px;
+    padding: 10px;
     margin: 0px;
 }
 
 .bgImage
 {
-    height: 16px;
+    height: 40px;
     width: 40px;
+
+    background-size: 100% 100%;
     background-repeat: no-repeat, no-repeat;
     background-size: cover;
+
+    filter: brightness(0.5) drop-shadow(3px 3px 4px hsl(0, 0%, 10%));
+
     z-index: 100;
+}
+
+.bgImage:hover
+{
+    filter: brightness(0.6) drop-shadow(4px 4px 6px hsl(0, 0%, 5%));
 }
 
 .linkedInLink
 {
     background-image: url("./linkedin-plain.svg");
-    filter: brightness(0.8) drop-shadow(1px 1px 2px hsl(240, 69%, 50%));
 }
 
 .gitHubLink
 {
     background-image: url("./github-original.svg");
-    filter: brightness(0.8) drop-shadow(1px 1px 2px hsl(240, 69%, 50%));
 }
