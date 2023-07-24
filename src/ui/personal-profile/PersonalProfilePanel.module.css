@@ -1,0 +1,35 @@
+.mainContainer
+{
+    box-sizing: border-box;
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-content: flex-start;
+    gap: 0px;
+
+    padding: 0px;
+    margin: 0px;
+}
+
+.bgImage
+{
+    height: 16px;
+    width: 40px;
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover;
+    z-index: 100;
+}
+
+.linkedInLink
+{
+    background-image: url("./linkedin-plain.svg");
+    filter: brightness(0.8) drop-shadow(1px 1px 2px hsl(240, 69%, 50%));
+}
+
+.gitHubLink
+{
+    background-image: url("./github-original.svg");
+    filter: brightness(0.8) drop-shadow(1px 1px 2px hsl(240, 69%, 50%));
+}
